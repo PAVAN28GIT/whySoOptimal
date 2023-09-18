@@ -1,0 +1,2 @@
+also add the .gitignore file here
+and remove this file before commiting
