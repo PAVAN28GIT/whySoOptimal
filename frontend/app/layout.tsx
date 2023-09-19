@@ -2,8 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Jost } from 'next/font/google'
 import Navbar from './components/navigation/Navbar'
-import { Provider } from 'react-redux'
-import { store } from './store/store'
+import { ReduxProvider } from '@/redux/provider'
 
 const jost = Jost({ subsets: ['latin'] })
 
@@ -20,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jost.className}>
-        <Provider store={store}>
+        <ReduxProvider>
           <Navbar />
           {children}
-        </Provider>
+        </ReduxProvider>
       </body>
     </html>
   )
