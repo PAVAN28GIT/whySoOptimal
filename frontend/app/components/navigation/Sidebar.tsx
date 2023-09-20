@@ -32,26 +32,28 @@ const Sidebar = () => {
     const isExpanded = useSelector((state: any) => state.navReducer.isExpanded)
 
     return (
-        <motion.div
-            initial={{ x: '100%', opacity: 0 }}
-            animate={{
-                x:isMobile ? (isExpanded ? '40%' : '100%') : (isExpanded ? '60%' : '100%'),
-                opacity: 1,
-            }}
-            transition={{ duration: 0.3 }}
-            className='h-screen lg:hidden bg-[#e0e0e0] px-6 pt-20 md:pt-28'>
-            <ul className='flex flex-col space-y-4 text-xl'>
-                {navbarData.map((item: navbarItem, index: number) => {
-                    return (
-                        <li key={index}>
-                            <Link href={item.path}>
-                                {item.title}
-                            </Link>
-                        </li>
-                    )
-                })}
-            </ul>
-        </motion.div>
+        <div className={`wrapper lg:hidden overflow-hidden ${isExpanded ? 'backdrop-blur-md' : ''} transition-all duration-300 fixed z-30`}>
+            <motion.div
+                initial={{ x: '100%', opacity: 0 }}
+                animate={{
+                    x: isMobile ? (isExpanded ? '40%' : '100%') : (isExpanded ? '60%' : '100%'),
+                    opacity: 1,
+                }}
+                transition={{ duration: 0.3 }}
+                className='pt-24 px-10 bg-[#e0e0e0] h-screen w-screen'>
+                <ul className='flex flex-col space-y-4 text-xl'>
+                    {navbarData.map((item: navbarItem, index: number) => {
+                        return (
+                            <li key={index}>
+                                <Link href={item.path}>
+                                    {item.title}
+                                </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </motion.div>
+        </div>
     )
 }
 
