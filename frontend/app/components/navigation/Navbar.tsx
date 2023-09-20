@@ -42,7 +42,7 @@ const Navbar = () => {
 
                     <ul className='right w-3/4 lg:w-1/3 flex items-center justify-end md:space-x-2 lg:space-x-3'>
                         <li className='mr-2'>
-                            <Button text='Sign In' />
+                            <Button text='Sign Up' path='/sign-up' />
                         </li>
                         <li className='text-2xl mr-2'>
                             <LuSearch />

@@ -1,14 +1,18 @@
+import Link from 'next/link';
 import React from 'react';
 interface ButtonProps {
     text: string; // Specify the type of 'text' prop as string
+    path: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
+const Button: React.FC<ButtonProps> = ({ text, path }) => {
 
     return (
-        <div className='btn btn-neutral'>
-            {text}
-        </div>
+        <Link href={path}>
+            <div className='btn btn-neutral'>
+                {text}
+            </div>
+        </Link>
     );
 };
 
