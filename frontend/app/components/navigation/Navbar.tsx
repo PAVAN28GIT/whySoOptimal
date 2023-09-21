@@ -9,6 +9,7 @@ import Hamburger from '../elements/Hamburger';
 
 const Navbar = () => {
 
+
     type navbarItem = {
         title: string,
         path: string,
@@ -17,7 +18,7 @@ const Navbar = () => {
     return (
         <>
             <div className="wrapper overflow-hidden w-full">
-                <nav className='flex w-screen fixed top-0 left-0 z-50 backdrop-blur-2xl bg-[rgba(255,255,255,0.3)] items-center justify-center pl-4 pr-2 py-2 md:pl-20 md:pr-8 lg:px-20 xl:px-28 '>
+                <nav className={`flex w-screen fixed top-0 left-0 z-50 backdrop-blur-2xl bg-[rgba(255,255,255,0.3)] items-center  justify-center pl-4 pr-2 py-2 md:pl-20 md:pr-8 lg:px-20 xl:px-28 `}>
                     <ul className='left hidden text-lg lg:w-1/3 lg:flex items-center text-white justify-start space-x-8'>
                         {navbarData.map((item: navbarItem, index: number) => {
                             return (
@@ -44,15 +45,15 @@ const Navbar = () => {
                         <li className='mr-2'>
                             <Button text='Sign Up' path='/sign-up' />
                         </li>
-                        <li className='text-2xl mr-2'>
+                        <li className={`text-2xl mr-2`}>
                             <LuSearch />
                         </li>
                         <li className='mr-1'>
-                            <Link href='/cart' className='text-2xl'>
+                            <Link href='/cart' className={`text-2xl`}>
                                 <FiShoppingCart />
                             </Link>
                         </li>
-                        <li className=''>
+                        <li>
                             <Hamburger />
                         </li>
                     </ul>

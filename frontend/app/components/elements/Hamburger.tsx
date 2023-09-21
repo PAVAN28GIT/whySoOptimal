@@ -21,19 +21,19 @@ const Hamburger = () => {
                 initial={{ rotate: 0 }}
                 animate={{ rotate: expandState ? 45 : 0, y: expandState ? 7 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="line w-7 h-[0.2rem] bg-black rounded-full"
+                className={`line w-7 h-[0.2rem] bg-black rounded-full`}
             ></motion.div>
             <motion.div
                 initial={{ opacity: 1 }}
                 animate={{ opacity: expandState ? 0 : 1 }}
                 transition={{ duration: 0.2 }}
-                className="line text-left w-6 h-[0.2rem] bg-black rounded-full"
+                className={`line text-left w-6 h-[0.2rem] bg-black rounded-full`}
             ></motion.div>
             <motion.div
                 initial={{ rotate: 0 }}
                 animate={{ rotate: expandState ? -45 : 0, y: expandState ? -8 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="line w-7 h-[0.2rem] bg-black rounded-full"
+                className={`line w-7 h-[0.2rem] bg-black rounded-full`}
             ></motion.div>
         </div>
     )

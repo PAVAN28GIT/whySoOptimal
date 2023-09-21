@@ -32,7 +32,7 @@ const Sidebar = () => {
     const isExpanded = useSelector((state: any) => state.navReducer.isExpanded)
 
     return (
-        <div className={`wrapper lg:hidden overflow-hidden ${isExpanded ? 'backdrop-blur-md' : '-z-50'} transition-all duration-300 fixed z-30`}>
+        <div className={`wrapper lg:hidden overflow-hidden ${isExpanded ? 'backdrop-blur-md' : 'hidden'} transition-all duration-300 fixed z-30`}>
             <motion.div
                 initial={{ x: '100%', opacity: 0 }}
                 animate={{
