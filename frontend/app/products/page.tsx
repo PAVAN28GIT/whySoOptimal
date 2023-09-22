@@ -31,10 +31,10 @@ const Products = () => {
                             </Link>
                             <div className="details w-3/4 ml-2 lg:w-full flex flex-col justify-center">
                                 <div className="updateDetails flex-col space-y-4 text-xs flex my-1 ">
-                                    <p className='text-2xl font-bold'>{product.title}</p>
-                                    <p className='text-2xl font-bold'>{product.description}</p>
-                                    <p className='text-2xl font-bold'>{product.ratings}</p>
-                                    <p className='text-2xl font-bold'>{product.price}</p>
+                                    <p className='text-2xl font-bold'>Name : {product.title}</p>
+                                    <p className='text-2xl font-bold'>Description : {product.description}</p>
+                                    <p className='text-2xl font-bold'>Ratings : {product.ratings}</p>
+                                    <p className='text-2xl font-bold'>Price : RS.{product.price} only</p>
                                 </div>
                             </div>
                         </div>
