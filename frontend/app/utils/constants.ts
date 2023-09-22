@@ -20,6 +20,10 @@ export const navbarData: NavbarData[] = [
         title: 'Inventory',
         path: '/inventory',
     },
+    {
+        title: 'Analysis',
+        path: 'http://localhost:8501/',
+    }
 ]
 
 export type FormField = {
