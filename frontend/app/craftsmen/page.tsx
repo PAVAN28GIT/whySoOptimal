@@ -44,7 +44,7 @@ const craftsmen = () => {
                         <p className='text-2xl font-bold'>Name : Seema Rastogi</p>
                         <p className='text-2xl font-bold'>Bio : Dedicated artisian.</p>
                         <p className='text-2xl font-bold'>Ratings : 4.6</p>
-                        <Link href='/products'>
+                        <Link target='_blank' href='http://localhost:8502'>
                             <p className='text-2xl font-bold hover:underline'>View Products</p>
                         </Link>
                     </div>
