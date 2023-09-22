@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Jost } from 'next/font/google'
 import Navbar from './components/navigation/Navbar'
+import Chatbot from './components/elements/Chatbot'
 import { ReduxProvider } from '@/redux/provider'
 
 const jost = Jost({ subsets: ['latin'] })
@@ -22,6 +23,7 @@ export default function RootLayout({
         <ReduxProvider>
           <Navbar />
           {children}
+          <Chatbot />
         </ReduxProvider>
       </body>
     </html>

@@ -35,6 +35,9 @@ const Products = () => {
                                     <p className='text-2xl font-bold'>Description : {product.description}</p>
                                     <p className='text-2xl font-bold'>Ratings : {product.ratings}</p>
                                     <p className='text-2xl font-bold'>Price : RS.{product.price} only</p>
+                                    <Link href='/traceability'>
+                                        <p className='text-2xl font-bold hover:underline'>View traceability</p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
