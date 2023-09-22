@@ -57,7 +57,6 @@ const Upload = () => {
         const files = e.target.files;
         if (files && files.length > 0) {
             const result = await uploadProductsImages(Array.from(files));
-            console.log(result);
             if (result.length > 0) {
                 toast.success('Images uploaded successfully');
                 setProductDetails({

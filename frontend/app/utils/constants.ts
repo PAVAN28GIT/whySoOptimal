@@ -1,5 +1,3 @@
-import { type } from "os";
-
 type NavbarData = {
     title: string;
     path: string;

@@ -76,3 +76,36 @@ export const uploadProductDocument = async (productDetails: ProductDetails) => {
         throw error;
     }
 }
+
+export const fetchProducts = async (setProducts) => {
+    try {
+        if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
+            throw new Error("NEXT_PUBLIC_PROJECT_ID is not defined in your environment variables.");
+        }
+
+        if (!process.env.NEXT_PUBLIC_DATABASE_ID) {
+            throw new Error("NEXT_PUBLIC_PRODUCTS_BUCKET_ID is not defined in your environment variables.");
+        }
+
+        if (!process.env.NEXT_PUBLIC_PRODUCTS_COLLECTION_ID) {
+            throw new Error("NEXT_PUBLIC_PRODUCTS_COLLECTION_ID is not defined in your environment variables.");
+        }
+
+        const client = new Client()
+            .setEndpoint('https://cloud.appwrite.io/v1')
+            .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
+        const databases = new Databases(client);
+
+        const result = await databases.listDocuments(
+            process.env.NEXT_PUBLIC_DATABASE_ID,
+            process.env.NEXT_PUBLIC_PRODUCTS_COLLECTION_ID,
+        );
+
+        console.log(result.documents);
+        setProducts(result.documents);
+        return result.documents;
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
